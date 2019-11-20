@@ -1,40 +1,19 @@
 package ru.levelup.roman.staune.qa.homework_1.task_1;
 
-import java.util.Scanner;
-
-public class Addition extends Operation {
-    private double firstOperand;
-    private double secondOperand;
-
+class Addition extends Operation {
     @Override
-    boolean input() {
-        Scanner in = new Scanner(System.in);
+    Number[] input() {
         System.out.print("Введите первое число (double): ");
-        String firstOperand = in.next();
+        double firstOperand = CalculatorInput.readDouble();
         System.out.print("Введите второе число (double): ");
-        String secondOperand = in.next();
-        return verifyInput(firstOperand, secondOperand);
+        double secondOperand = CalculatorInput.readDouble();
+        return new Double[]{firstOperand, secondOperand};
     }
 
     @Override
-    void calculate() {
-        System.out.format("Результат: %.3f%n", firstOperand + secondOperand);
-    }
-
-    private boolean verifyInput(String firstOperand, String secondOperand) {
-        try {
-            this.firstOperand = Double.parseDouble(firstOperand);
-        } catch (NumberFormatException e) {
-            System.out.println("Первый аргумент не типа double!");
-            return false;
-        }
-
-        try {
-            this.secondOperand = Double.parseDouble(secondOperand);
-        } catch (NumberFormatException e) {
-            System.out.println("Второй аргумент не типа double!");
-            return false;
-        }
-        return true;
+    void calculate(Number...operands) {
+        double firstOperand = (double) operands[0];
+        double secondOperand = (double) operands[1];
+        System.out.format("Результат: %.7f%n", firstOperand + secondOperand);
     }
 }

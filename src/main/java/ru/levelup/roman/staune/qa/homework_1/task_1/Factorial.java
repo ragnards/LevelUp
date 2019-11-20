@@ -1,20 +1,16 @@
 package ru.levelup.roman.staune.qa.homework_1.task_1;
 
-import java.util.Scanner;
-
-public class Factorial extends Operation {
-    private int argument;
-
+class Factorial extends Operation {
     @Override
-    boolean input() {
-        Scanner in = new Scanner(System.in);
+    Number[] input() {
         System.out.print("Введите целое неотрицательное число: ");
-        String argument = in.next();
-        return verifyInput(argument);
+        int argument = CalculatorInput.readNonNegativeInt();
+        return new Number[]{argument};
     }
 
     @Override
-    void calculate() {
+    void calculate(Number...operands) {
+        int argument = (int) operands[0];
         long result = 1;
         for (int i = 1; i <= argument; i++) {
             result = result * i;
@@ -24,19 +20,5 @@ public class Factorial extends Operation {
             }
         }
         System.out.format("Результат: %d%n", result);
-    }
-
-    private boolean verifyInput(String argument) {
-        try {
-            this.argument = Integer.parseInt(argument);
-        } catch (NumberFormatException e) {
-            System.out.println("Аргумент не типа int!");
-            return false;
-        }
-        if (this.argument < 0) {
-            System.out.println("Отрицательный аргумент!");
-            return false;
-        }
-        return true;
     }
 }

@@ -1,20 +1,16 @@
 package ru.levelup.roman.staune.qa.homework_1.task_1;
 
-import java.util.Scanner;
-
-public class Fibonacci extends Operation {
-    private int argument;
-
+class Fibonacci extends Operation {
     @Override
-    boolean input() {
-        Scanner in = new Scanner(System.in);
+    Number[] input() {
         System.out.print("Введите целое положительное число: ");
-        String argument = in.next();
-        return verifyInput(argument);
+        int argument = CalculatorInput.readNaturalInt();
+        return new Number[]{argument};
     }
 
     @Override
-    void calculate() {
+    void calculate(Number...operands) {
+        int argument = (int) operands[0];
         long result;
         if (argument == 1 || argument == 2) {
             result = 1;
@@ -32,19 +28,5 @@ public class Fibonacci extends Operation {
             result = sequenceTail[2];
         }
         System.out.format("Результат: %d%n", result);
-    }
-
-    private boolean verifyInput(String argument) {
-        try {
-            this.argument = Integer.parseInt(argument);
-        } catch (NumberFormatException e) {
-            System.out.println("Аргумент не типа int!");
-            return false;
-        }
-        if (this.argument < 0) {
-            System.out.println("Аргумент не положительный!");
-            return false;
-        }
-        return true;
     }
 }
