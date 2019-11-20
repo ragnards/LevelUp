@@ -1,44 +1,26 @@
 package ru.levelup.roman.staune.qa.homework_1.task_1;
 
-import java.util.Scanner;
-
-public class Exponentiation extends Operation {
-    private int power;
-    private double basis;
-
+class Exponentiation extends Operation {
     @Override
-    boolean input() {
-        Scanner in = new Scanner(System.in);
+    Number[] input() {
         System.out.print("Введите степень (int): ");
-        String firstOperand = in.next();
+        int firstOperand = CalculatorInput.readInt();
         System.out.print("Введите основание (double): ");
-        String secondOperand = in.next();
-        return verifyInput(firstOperand, secondOperand);
+        double secondOperand = CalculatorInput.readDouble();
+        return new Number[]{firstOperand, secondOperand};
     }
 
     @Override
-    void calculate() {
-        Double result = 1.0;
-        for (int i = 0; i < power; i++) {
+    void calculate(Number...operands) {
+        int power = (int) operands[0];
+        double basis = (double) operands[1];
+        double result = 1.0;
+        for (int i = 0; i < Math.abs(power); i++) {
             result = result * basis;
         }
-        System.out.format("Результат: %.3f%n", result);
-    }
-
-    private boolean verifyInput(String firstOperand, String secondOperand) {
-        try {
-            power = Integer.parseInt(firstOperand);
-        } catch (NumberFormatException e) {
-            System.out.println("Первый аргумент не типа int!");
-            return false;
+        if (power < 0) {
+            result = 1 / result;
         }
-
-        try {
-            basis = Double.parseDouble(secondOperand);
-        } catch (NumberFormatException e) {
-            System.out.println("Второй аргумент не типа double!");
-            return false;
-        }
-        return true;
+        System.out.format("Результат: %.10f%n", result);
     }
 }
