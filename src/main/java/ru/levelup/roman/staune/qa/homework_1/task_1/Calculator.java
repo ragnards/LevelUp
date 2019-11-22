@@ -9,7 +9,8 @@ public class Calculator {
     }
 
     private void startApplication() {
-        String chosenOperation = CalculatorInput.operationInput();
+        CalculatorInput input = new CalculatorInput();
+        String chosenOperation = input.operationInput();
         Operation operation = null;
         switch (chosenOperation) {
             case "1":

@@ -1,6 +1,8 @@
 package ru.levelup.roman.staune.qa.homework_1.task_1;
 
-abstract class Operation {
-    abstract Number[] input();
-    abstract void calculate(Number...operands);
+interface Operation {
+    CalculatorInput input = new CalculatorInput();
+
+    Number[] input();
+    void calculate(Number... operands);
 }

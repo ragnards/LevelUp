@@ -1,17 +1,13 @@
 package ru.levelup.roman.staune.qa.homework_1.task_1;
 
-class Exponentiation extends Operation {
+class Exponentiation implements Operation {
     @Override
-    Number[] input() {
-        System.out.print("Введите степень (int): ");
-        int firstOperand = CalculatorInput.readInt();
-        System.out.print("Введите основание (double): ");
-        double secondOperand = CalculatorInput.readDouble();
-        return new Number[]{firstOperand, secondOperand};
+    public Number[] input() {
+        return input.inputTwoIntDoubleNumbers();
     }
 
     @Override
-    void calculate(Number...operands) {
+    public void calculate(Number... operands) {
         int power = (int) operands[0];
         double basis = (double) operands[1];
         double result = 1.0;

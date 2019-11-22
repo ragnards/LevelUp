@@ -1,15 +1,13 @@
 package ru.levelup.roman.staune.qa.homework_1.task_1;
 
-class Fibonacci extends Operation {
+class Fibonacci implements Operation {
     @Override
-    Number[] input() {
-        System.out.print("Введите целое положительное число: ");
-        int argument = CalculatorInput.readNaturalInt();
-        return new Number[]{argument};
+    public Number[] input() {
+        return input.inputNaturalInt();
     }
 
     @Override
-    void calculate(Number...operands) {
+    public void calculate(Number... operands) {
         int argument = (int) operands[0];
         long result;
         if (argument == 1 || argument == 2) {
