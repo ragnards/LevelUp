@@ -1,4 +1,4 @@
-package ru.levelup.roman.staune.qa.homework_2.task_1;
+package ru.levelup.roman.staune.qa.homework_2.task_1.vehicle.enums;
 
 public enum FuelType {
     BENZIN,
