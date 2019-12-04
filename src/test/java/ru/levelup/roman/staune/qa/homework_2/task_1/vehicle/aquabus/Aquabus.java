@@ -3,7 +3,7 @@ package ru.levelup.roman.staune.qa.homework_2.task_1.vehicle.aquabus;
 import ru.levelup.roman.staune.qa.homework_2.task_1.vehicle.Car;
 import ru.levelup.roman.staune.qa.homework_2.task_1.vehicle.enums.FuelType;
 
-class Aquabus extends Car {
+public class Aquabus extends Car {
     public Aquabus(String manufacturer, String title, double maxSpeed, FuelType fuelType,
                    double fuelConsumption, double price, int passengerCapacity) {
         super(manufacturer, title, maxSpeed, fuelType, fuelConsumption, price, passengerCapacity);

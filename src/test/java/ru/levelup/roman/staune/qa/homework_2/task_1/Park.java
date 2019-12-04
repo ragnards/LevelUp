@@ -21,5 +21,6 @@ public class Park {
         parkUtils.printPark(transportPark);
         parkUtils.calculateParkCost(transportPark);
         parkUtils.sortByFuelConsumption(transportPark);
+        parkUtils.findBusByManufacturer(transportPark, "ВАП Волжанин");
     }
 }

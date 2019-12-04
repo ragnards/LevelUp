@@ -13,8 +13,8 @@ public abstract class Vehicle implements Drivable, PeopleCarriage {
     private double price;
     private int passengerCapacity;
 
-    public Vehicle(String manufacturer, String title, double maxSpeed, FuelType fuelType,
-                   double fuelConsumption, double price, int passengerCapacity) {
+    Vehicle(String manufacturer, String title, double maxSpeed, FuelType fuelType,
+            double fuelConsumption, double price, int passengerCapacity) {
         this.manufacturer = manufacturer;
         this.title = title;
         this.maxSpeed = maxSpeed;

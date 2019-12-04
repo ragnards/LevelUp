@@ -1,8 +1,10 @@
 package ru.levelup.roman.staune.qa.homework_2.task_1;
 
 import ru.levelup.roman.staune.qa.homework_2.task_1.vehicle.Vehicle;
+import ru.levelup.roman.staune.qa.homework_2.task_1.vehicle.bus.Bus;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 class TransportParkUtils {
     void printPark(TransportPark park) {
@@ -15,6 +17,7 @@ class TransportParkUtils {
         for (Vehicle vehicle : park.getVehicles()) {
             cost = cost + vehicle.getPrice();
         }
+        System.out.println("########################################");
         System.out.printf("Стоимость транспорного парка %s: %.2f\n", park.getName(), cost);
     }
 
@@ -31,8 +34,23 @@ class TransportParkUtils {
             }
             return 0;
         });
-
+        System.out.println("########################################");
         System.out.println("Сортировка парка по расходу топлива");
         printPark(park);
+    }
+
+    void findBusByManufacturer(TransportPark park, String manufacturer) {
+        List<Bus> findResult = park.getVehicles().stream()
+                .filter(vehicle -> vehicle instanceof Bus)
+                .map(vehicle -> (Bus) vehicle)
+                .filter(bus -> bus.getManufacturer().equals(manufacturer))
+                .collect(Collectors.toList());
+        System.out.println("########################################");
+        System.out.printf("Список автобусов производителя \"%s\" в парке \"%s\":\n", manufacturer, park.getName());
+        if (findResult.isEmpty()) {
+            System.out.println("Не найдено ни одного автобуса");
+        } else {
+            findResult.forEach(System.out::println);
+        }
     }
 }

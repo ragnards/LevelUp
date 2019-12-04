@@ -3,7 +3,6 @@ package ru.levelup.roman.staune.qa.homework_2.task_1.vehicle.tram;
 import ru.levelup.roman.staune.qa.homework_2.task_1.vehicle.Electrobus;
 
 class Tram extends Electrobus {
-
     public Tram(String manufacturer, String title, double maxSpeed,
                 double fuelConsumption, double price, int passengerCapacity) {
         super(manufacturer, title, maxSpeed, fuelConsumption, price, passengerCapacity);
