@@ -1,0 +1,11 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Multiplication and division tests">
+    <test name="mult and div">
+        <groups>
+            <run>
+                <include name="mult_div_tests"/>
+            </run>
+        </groups>
+    </test>
+</suite>

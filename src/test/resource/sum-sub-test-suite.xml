@@ -1,0 +1,11 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Summation and subtraction tests">
+    <test name="sum and sub">
+        <groups>
+            <run>
+                <include name="sum_sub_tests"/>
+            </run>
+        </groups>
+    </test>
+</suite>

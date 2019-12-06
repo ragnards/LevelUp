@@ -32,12 +32,13 @@
                 <version>${surefire.plugin.version}</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>test-suite.xml</suiteXmlFile>
+                        <suiteXmlFile>all-operations-test-suite.xml</suiteXmlFile>
+                        <suiteXmlFile>sum-sub-test-suite.xml</suiteXmlFile>
+                        <suiteXmlFile>mult-div-test-suite.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-
 
 </project>
