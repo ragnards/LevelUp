@@ -33,7 +33,7 @@ public class CalculatorMultiplyTest {
 
     @Test(dataProvider = "doubleOperands", groups = "mult_div_tests")
     public void testMultiplyDoubleOperands(double firstNum, double secondNum, double expected) {
-        long actual = calculator.mult(firstNum, secondNum);
+        double actual = calculator.mult(firstNum, secondNum);
         Assert.assertEquals(actual, expected, PRECISION);
     }
 }

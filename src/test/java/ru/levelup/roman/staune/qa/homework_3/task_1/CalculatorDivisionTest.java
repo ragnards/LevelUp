@@ -33,7 +33,7 @@ public class CalculatorDivisionTest {
 
     @Test(dataProvider = "doubleOperands", groups = "mult_div_tests")
     public void testDivisionDoubleOperands(double firstNum, double secondNum, double expected) {
-        long actual = calculator.div(firstNum, secondNum);
+        double actual = calculator.div(firstNum, secondNum);
         Assert.assertEquals(actual, expected, PRECISION);
     }
 }

@@ -32,7 +32,7 @@ public class CalculatorSubtractionTest {
 
     @Test(dataProvider = "doubleOperands", groups = "sum_sub_tests")
     public void testSubtractionDoubleOperands(double firstNum, double secondNum, double expected) {
-        long actual = calculator.sub(firstNum, secondNum);
+        double actual = calculator.sub(firstNum, secondNum);
         Assert.assertEquals(actual, expected);
     }
 }

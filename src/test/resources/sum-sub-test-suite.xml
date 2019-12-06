@@ -7,5 +7,9 @@
                 <include name="sum_sub_tests"/>
             </run>
         </groups>
+        <classes>
+            <class name="ru.levelup.roman.staune.qa.homework_3.task_1.CalculatorSummationTest"/>
+            <class name="ru.levelup.roman.staune.qa.homework_3.task_1.CalculatorSubtractionTest"/>
+        </classes>
     </test>
 </suite>

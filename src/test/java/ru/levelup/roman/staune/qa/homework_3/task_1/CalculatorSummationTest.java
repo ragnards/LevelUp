@@ -32,7 +32,7 @@ public class CalculatorSummationTest {
 
     @Test(dataProvider = "doubleOperands", groups = "sum_sub_tests")
     public void testSummationDoubleOperands(double firstNum, double secondNum, double expected) {
-        long actual = calculator.sum(firstNum, secondNum);
+        double actual = calculator.sum(firstNum, secondNum);
         Assert.assertEquals(actual, expected);
     }
 }
