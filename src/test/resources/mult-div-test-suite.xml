@@ -1,0 +1,15 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Multiplication and division tests">
+    <test name="mult and div">
+        <groups>
+            <run>
+                <include name="mult_div_tests"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="ru.levelup.roman.staune.qa.homework_3.task_1.CalculatorMultiplyTest"/>
+            <class name="ru.levelup.roman.staune.qa.homework_3.task_1.CalculatorDivisionTest"/>
+        </classes>
+    </test>
+</suite>

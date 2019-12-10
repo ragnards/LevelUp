@@ -4,5 +4,6 @@ interface Operation {
     CalculatorInput input = new CalculatorInput();
 
     Number[] input();
+
     void calculate(Number... operands);
 }
