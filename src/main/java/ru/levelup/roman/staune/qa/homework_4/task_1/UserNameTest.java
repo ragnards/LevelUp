@@ -1,27 +1,15 @@
 package ru.levelup.roman.staune.qa.homework_4.task_1;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import ru.levelup.roman.staune.qa.homework_4.BaseTest;
 
-public class UserNameTest {
-    private WebDriver driver;
-
-    @BeforeClass
-    public void setUp() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-    }
+public class UserNameTest extends BaseTest {
 
     @Test
-    public void testSiteAndUserName() {
+    public void testUserName() {
         // 1. Открыть тестовый сайт
         driver.get("http://users.bugred.ru/");
         // 2. Проверить название сайта
@@ -38,11 +26,5 @@ public class UserNameTest {
         // 5. Выполнить выход из системы
         userButton.click();
         driver.findElement(By.cssSelector("a[href *= 'logout']")).click();
-    }
-
-    @AfterClass
-    public void tearDown() {
-        // 6. Закрыть браузер
-        driver.close();
     }
 }
