@@ -1,0 +1,11 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="hw4">
+    <test name="full">
+        <classes>
+            <class name="ru.levelup.roman.staune.qa.homework_4.task_1.UserNameTest"/>
+            <class name="ru.levelup.roman.staune.qa.homework_4.task_2.CreateTaskTest"/>
+            <class name="ru.levelup.roman.staune.qa.homework_4.task_3.CreateCompanyTest"/>
+        </classes>
+    </test>
+</suite>

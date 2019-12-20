@@ -15,6 +15,7 @@
         <selenium.version>3.141.59</selenium.version>
         <webdrivermanager.version>3.7.1</webdrivermanager.version>
         <surefire.plugin.version>2.22.2</surefire.plugin.version>
+        <testng.suite/>
     </properties>
 
     <dependencies>
@@ -45,11 +46,20 @@
                 <version>${surefire.plugin.version}</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>selenium-suite-1.xml</suiteXmlFile>
+                        <suiteXmlFile>${testng.suite}</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>selenium</id>
+            <properties>
+                <testng.suite>${basedir}/src/test/resources/selenium-suite.xml</testng.suite>
+            </properties>
+        </profile>
+    </profiles>
 
 </project>
